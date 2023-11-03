@@ -1,3 +1,0 @@
-address: '171.34.145.46'
-port: 8000
-timeout_usec: 100

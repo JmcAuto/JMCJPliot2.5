@@ -1,7 +1,0 @@
-syntax = "proto2";
-
-package jmc_auto.planning;
-
-message PathReuseDeciderConfig {
-  optional bool reuse_path = 1;
-}

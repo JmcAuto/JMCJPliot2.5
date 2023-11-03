@@ -1,3 +1,0 @@
-name: "YoloCameraDetector"
-version: "1.0.0"
-yolo_root: "/jmcauto/modules/perception/model/yolo_camera_detector"

@@ -1,6 +1,0 @@
-name : "TESHUN"
-brand : TESHUN
-model : TESHUN
-license {
-    vin : "<VIN>"
-}

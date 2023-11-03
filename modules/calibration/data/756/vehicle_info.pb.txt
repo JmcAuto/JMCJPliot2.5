@@ -1,6 +1,0 @@
-name : "756"
-brand : 756
-model : 756
-license {
-    vin : "001"
-}

@@ -1,7 +1,0 @@
-syntax = "proto2";
-
-package jmc_auto.planning;
-
-message PathLaneBorrowDeciderConfig {
-  optional bool allow_lane_borrowing = 1;
-}
