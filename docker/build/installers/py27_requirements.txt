@@ -1,0 +1,28 @@
+# To use these python tools, you need to install dependencies with command:
+#    sudo apt-get install python-numpy python-scipy python-matplotlib
+#    sudo pip install -r py27_requirements.txt
+
+# system utils
+supervisor == 3.3.3
+
+# Google infras.
+glog == 0.3.1
+protobuf == 3.1
+python-gflags == 3.1.1
+
+# Web utils.
+flask == 0.12.2
+flask-cors == 3.0.3
+requests >= 2.18
+simplejson == 3.11.1
+
+# ROS env.
+PyYAML == 3.12
+catkin_pkg == 0.3.6
+rospkg == 1.1.2
+
+# Python tools
+plyvel == 0.9
+pyproj == 1.9.5.1
+shapely == 1.6.2
+empy

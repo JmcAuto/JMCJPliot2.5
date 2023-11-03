@@ -1,0 +1,72 @@
+syntax = "proto2";
+package jmc_auto.control;
+
+import "modules/common/proto/header.proto";
+import "modules/canbus/proto/chassis.proto";
+import "modules/common/proto/geometry.proto";
+
+enum DrivingAction {
+  STOP = 0;
+  START = 1;
+  RESET = 2;
+};
+
+enum DrivingMotion {
+  CONTINUE = 0;
+  PAUSE = 1;
+}
+/*
+enum AppMode {
+  NORMAL = 0;
+  PARKING = 1;
+  PARKING_NOID = 2;
+  SUMMON = 3;
+  SUMMON_INPARKING = 4;
+  PARKING_TO_PARKING = 5;
+};*/
+
+//message PointENU {
+  //optional double x = 1 [default = nan];  // East from the origin, in meters.
+  //optional double y = 2 [default = nan];  // North from the origin, in meters.
+  //optional double z = 3 [default = 0.0];  // Up from the WGS-84 ellipsoid, in
+                                          // meters.
+
+/*
+message SEPoint {
+  optional PointENU start = 1;
+  optional PointENU end = 2;
+}*/
+/*
+message ParkingSpace_info {
+  optional string id = 1;
+  optional PointENU point_left_up = 2;
+  optional PointENU point_left_down = 3;
+  optional PointENU point_right_down = 4;
+  optional PointENU point_right_up = 5;
+}*/
+
+message PadMessage {
+  // control mode, set mode according to low level defination
+  optional jmc_auto.common.Header header = 1;
+
+  // send driving mode to drive
+  optional jmc_auto.canbus.Chassis.DrivingMode driving_mode = 2;
+
+  // action in the driving_mode
+  optional DrivingAction action = 3;
+
+  // start and end points
+  //optional SEPoint point = 4;
+
+  //输出车位信息parkingspace
+  //optional ParkingSpace_info parkingspace_info = 5;
+
+  //定义手机app泊车/召唤模式
+  //optional AppMode appmode = 6;
+
+  optional DrivingMotion motion = 7;
+ 
+  //输出车位信息parkingspace
+  //optional ParkingSpace_info toparkingspace_info = 8;
+}
+

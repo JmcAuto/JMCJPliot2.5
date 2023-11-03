@@ -1,0 +1,17 @@
+header:
+  seq: 0
+  stamp:
+    nsecs: 0
+    secs: 0
+  frame_id: Velodyne64
+child_frame_id: short_camera
+transform:
+  translation:
+    y: 0.2279088379791808
+    z: -0.7117493023137133
+    x: 0.4728499554054348
+  rotation:
+    z: -0.4942498792471561
+    y: 0.4802101302633339
+    w: 0.5242299378392927
+    x: -0.5002981710236952

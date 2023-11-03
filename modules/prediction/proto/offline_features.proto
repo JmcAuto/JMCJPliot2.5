@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package jmc_auto.prediction;
+
+import "modules/prediction/proto/feature.proto";
+
+message Features {
+	repeated Feature feature = 1;
+}

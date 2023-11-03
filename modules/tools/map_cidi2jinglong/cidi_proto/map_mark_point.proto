@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package apollo.hdmap;
+
+import "modules/common/proto/geometry.proto";
+import "modules/tools/map_cidi2jinglong/cidi_proto/map_id.proto";
+
+message MarkPoint {
+  enum Type {
+    ENTRANCE_RAMP = 1;
+    TOLL_GATE_IN = 2;
+    TOLL_GATE_OUT = 3;
+    TUNNEL_IN = 4;
+    TUNNEL_OUT = 5;
+    RAMP_ENTRY_POINT = 6;
+  };
+
+  optional Id id = 1;
+  optional Type type = 2;
+  optional jmc_auto.common.PointENU position = 3;
+  repeated Id overlap_id = 4;
+}

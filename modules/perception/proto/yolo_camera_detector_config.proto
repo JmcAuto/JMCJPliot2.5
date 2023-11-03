@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package jmc_auto.perception.yolo_camera_detector_config;
+
+message ModelConfigs {
+  optional string name = 1 [ default = "YoloCameraDetector" ];
+  optional string version = 2 [ default = "1.0.0" ];
+  optional string yolo_root = 3 [ default = "/jmcauto/modules/perception/model/yolo_camera_detector" ];
+}

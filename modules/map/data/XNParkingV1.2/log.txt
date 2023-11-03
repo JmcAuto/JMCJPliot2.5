@@ -1,0 +1,18 @@
+V1.1
+lane 708:
+将right_sample加宽1米
+将right_road_sample加宽1米
+提升彎道通過性
+lane 1039:
+将right_sample缩短0.5米
+将right_road_sample缩短0.5米
+将left_sample增加1.5米
+将left_road_sample增加1米
+
+114left_sample左邊界调宽1.5米
+防止进入领导停车场
+删除 lane 1000 1045 1025 1004
+防止出车棚门，删除 lane 969 967
+防止u型弯过不去，修改708的中心线
+v1.2 
+在广场将添加斜方停车位 58_ParkingSpace  57_ParkingSpace,水平停车位 60_ParkingSpace 59_ParkingSpace 56_ParkingSpace

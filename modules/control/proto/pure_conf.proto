@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package jmc_auto.control;
+
+//import "modules/control/proto/pure_conf.proto";
+
+// simple optimal steer control param
+message PureConf {
+  optional double ts = 1; //-----------pure采样周期          
+  optional double lookahead = 2;//-----前进时的预瞄距离,沿车身航向
+  optional double lookback = 3 ; //-----倒车时的预瞄距离,沿车身航向
+  optional int32 parking_preview_window = 4 ;//--------------泊车预瞄窗口
+  optional int32 summon_preview_window = 5;//---------------召唤预瞄窗口
+  optional int32 driving_preview_window = 6 ;//--------------行车预瞄窗口
+
+}

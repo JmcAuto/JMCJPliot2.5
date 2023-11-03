@@ -1,0 +1,239 @@
+syntax = "proto2";
+
+package jmc_auto.drivers.gnss_m2;
+
+message Stdvelocity_708 {
+// Report Message
+  // [] [0|0]
+  optional double velocityupstd = 1;
+  // [] [0|0]
+  optional double velocitynorthstd = 2;
+  // [] [0|0]
+  optional double velocityeaststd = 3;
+}
+
+message Stdattitude_709 {
+// Report Message
+  // [] [0|0]
+  optional double rollstd = 1;
+  // [] [0|0]
+  optional double pitchstd = 2;
+  // [] [0|0]
+  optional double yawstd = 3;
+}
+
+message Combinealtitude_704 {
+// Report Message
+  // [m] [0|0]
+  optional double altitudeundulation = 1;
+  // [m] [0|0]
+  optional double altitude = 2;
+}
+
+message Combinevelocity_705 {
+// Report Message
+  // [m/s] [0|0]
+  optional double velocityhorizon = 1;
+  // [m/s] [0|0]
+  optional double velocityup = 2;
+  // [m/s] [0|0]
+  optional double velocitynorth = 3;
+  // [m/s] [0|0]
+  optional double velocityeast = 4;
+}
+
+message Combineattitude_706 {
+// Report Message
+  // [deg] [-180|180]
+  optional double roll = 1;
+  // [deg] [-90|90]
+  optional double pitch = 2;
+  // [deg] [0|360]
+  optional double yaw = 3;
+}
+
+message Stdposition_707 {
+// Report Message
+  // [] [0|0]
+  optional double altitudestd = 1;
+  // [] [0|0]
+  optional double longitudestd = 2;
+  // [] [0|0]
+  optional double latitudestd = 3;
+}
+
+message Combinegpstime_701 {
+// Report Message
+  // ���ϵͳGPS�� [s] [0|604800]
+  optional double gpssecond = 1;
+  // [��] [0|65535]
+  optional int32 gpsweek = 2;
+}
+
+message Combineutctime_702 {
+// Report Message
+  // [s] [0|100]
+  optional double utcmilsecond = 1;
+  // [s] [0|60]
+  optional int32 utcsecond = 2;
+  // [] [0|60]
+  optional int32 utcminute = 3;
+  // [] [0|24]
+  optional int32 utchour = 4;
+  // [] [0|31]
+  optional int32 utcdate = 5;
+  // [] [0|12]
+  optional int32 utcmonth = 6;
+  // [] [0|0]
+  optional int32 utcyear = 7;
+}
+
+message Combineposition_703 {
+// Report Message
+  // [deg] [-180|180]
+  optional double longitude = 1;
+  // [deg] [-90|90]
+  optional double latitude = 2;
+}
+
+message Odometer_input_99 {
+// Control Message
+  // checksum=Sum(Byte0:Byte6)^0xff [] [0|0]
+  optional int32 checksum = 1;
+  // [km/h] [0|256]
+  optional double vehspd_input = 2;
+  // [] [0|2]
+  optional int32 gearposition_input = 3;
+}
+
+message Combinestatus_710 {
+// Report Message
+  // [km/h] [0|256]
+  optional double vehspd = 1;
+  // [] [0|2]
+  optional int32 gearposition = 2;
+  // [] [0|0]
+  optional int32 gpsflag = 3;
+  // [] [0|0]
+  optional int32 dmiflag = 4;
+  // [] [0|0]
+  optional int32 navflag = 5;
+}
+
+message Imu_1_721 {
+// Report Message
+  // [g] [0|0]
+  optional double accel_y = 1;
+  // [g] [0|0]
+  optional double accel_x = 2;
+}
+
+message Revrgpstime_731 {
+// Report Message
+  // [] [0|0]
+  optional double gpssecond_receiver = 1;
+  // [] [0|0]
+  optional int32 gpsweek_receiver = 2;
+}
+
+message Revrposition_733 {
+// Report Message
+  // [deg] [-180|180]
+  optional double longitude_receiver = 1;
+  // [deg] [-90|90]
+  optional double latitude_receiver = 2;
+}
+
+message Revrutctime_732 {
+// Report Message
+  // [] [0|0]
+  optional double utctime_receiver = 1;
+  // [] [0|0]
+  optional int32 utcdate_receiver = 2;
+}
+
+message Imu_2_722 {
+// Report Message
+  // [deg/s] [0|0]
+  optional double gyro_x = 1;
+  // [g] [0|0]
+  optional double accel_z = 2;
+}
+
+message Imu_3_723 {
+// Report Message
+  // [deg/s] [0|0]
+  optional double gyro_z = 1;
+  // [deg/s] [0|0]
+  optional double gyro_y = 2;
+}
+
+message Revrstatus_737 {
+// Report Message
+  // [] [0|0]
+  optional int32 diffid = 1;
+  // [] [0|0]
+  optional int32 difftime = 2;
+  // [] [0|0]
+  optional double hdop_receiver = 3;
+  // [] [0|0]
+  optional int32 satelitenum_secondary = 4;
+  // [] [0|0]
+  optional int32 satelitenum_primary = 5;
+}
+
+message Revrattitude_736 {
+// Report Message
+  // [deg] [0|360]
+  optional double track_receiver = 1;
+  // [m] [0|0]
+  optional double baseline = 2;
+  // [deg] [-90|90]
+  optional double pitch_receiver = 3;
+  // [deg] [0|360]
+  optional double yaw_receiver = 4;
+}
+
+message Revrvelocity_735 {
+// Report Message
+  // [m/s] [0|0]
+  optional double velocityhorizon_receiver = 1;
+  // [m/s] [0|0]
+  optional double velocityup_receiver = 2;
+  // [m/s] [0|0]
+  optional double velocitynorth_receiver = 3;
+  // [m/s] [0|0]
+  optional double velocityeast_receiver = 4;
+}
+
+message Revraltitude_734 {
+// Report Message
+  // [m] [0|0]
+  optional double altitudeundulation = 1;
+  // [m] [0|0]
+  optional double altitude_receiver = 2;
+}
+
+message M2 {
+  optional Stdvelocity_708 stdvelocity_708 = 1; // report message
+  optional Stdattitude_709 stdattitude_709 = 2; // report message
+  optional Combinealtitude_704 combinealtitude_704 = 3; // report message
+  optional Combinevelocity_705 combinevelocity_705 = 4; // report message
+  optional Combineattitude_706 combineattitude_706 = 5; // report message
+  optional Stdposition_707 stdposition_707 = 6; // report message
+  optional Combinegpstime_701 combinegpstime_701 = 7; // report message
+  optional Combineutctime_702 combineutctime_702 = 8; // report message
+  optional Combineposition_703 combineposition_703 = 9; // report message
+  optional Odometer_input_99 odometer_input_99 = 10; // control message
+  optional Combinestatus_710 combinestatus_710 = 11; // report message
+  optional Imu_1_721 imu_1_721 = 12; // report message
+  optional Revrgpstime_731 revrgpstime_731 = 13; // report message
+  optional Revrposition_733 revrposition_733 = 14; // report message
+  optional Revrutctime_732 revrutctime_732 = 15; // report message
+  optional Imu_2_722 imu_2_722 = 16; // report message
+  optional Imu_3_723 imu_3_723 = 17; // report message
+  optional Revrstatus_737 revrstatus_737 = 18; // report message
+  optional Revrattitude_736 revrattitude_736 = 19; // report message
+  optional Revrvelocity_735 revrvelocity_735 = 20; // report message
+  optional Revraltitude_734 revraltitude_734 = 21; // report message
+}

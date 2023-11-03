@@ -1,0 +1,17 @@
+child_frame_id: hesai40_right
+transform:
+  translation:
+    x: 0.7511566018813551
+    y: -0.04950116695333469
+    z: 1.678117223443479
+  rotation:
+    x: -0.003946775928481072
+    y: 0.001644038250133074
+    z: 0.9997230642015404
+    w: 0.02314119706249174
+header:
+  seq: 0
+  stamp:
+    secs: 1558582488
+    nsecs: 0
+  frame_id: novatel

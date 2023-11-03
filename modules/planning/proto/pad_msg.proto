@@ -1,0 +1,62 @@
+syntax = "proto2";
+package jmc_auto.planning;
+
+import "modules/common/proto/header.proto";
+import "modules/common/proto/geometry.proto";
+
+enum DrivingAction {
+  NONE = 100;
+  FOLLOW = 0;
+  CHANGE_LEFT = 1;
+  CHANGE_RIGHT = 2;
+  PULL_OVER = 3;
+  STOP = 4;
+  RESUME_CRUISE = 5;
+};
+
+enum AppMode {
+  NORMAL = 0;
+  PARKING = 1;
+  PARKING_NOID = 2;
+  SUMMON = 3;
+  SUMMON_INPARKING = 4;
+  PARKING_TO_PARKING = 5;
+};
+
+//message PointENU {
+  //optional double x = 1 [default = nan];  //East from the origin, in meters.
+  //optional double y = 2 [default = nan];  //North from the origin, in meters.
+  //optional double z = 3 [default = 0.0];  //Up from the WGS-84 ellipsoid, in meters.
+//};
+
+message SEPoint {
+  optional jmc_auto.common.PointENU start = 1;
+  optional jmc_auto.common.PointENU end = 2;
+};
+
+message ParkingSpaceInfo {
+  optional string id = 1;
+  optional jmc_auto.common.PointENU point_left_up = 2;
+  optional jmc_auto.common.PointENU point_left_down = 3;
+  optional jmc_auto.common.PointENU point_right_down = 4;
+  optional jmc_auto.common.PointENU point_right_up = 5;
+};
+
+message PadMessage {
+  optional jmc_auto.common.Header header = 1;
+
+  // driving action
+  optional DrivingAction action = 2;
+
+  // start and end points
+  optional SEPoint point = 3;
+
+  //parking space info
+  optional ParkingSpaceInfo parking_space_info = 4;
+
+  //
+  optional AppMode appmode = 5;
+
+  //
+  optional ParkingSpaceInfo to_parking_space_info = 6;
+}

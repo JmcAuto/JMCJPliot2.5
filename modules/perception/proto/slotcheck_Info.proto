@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+package jmc_auto.perception;
+
+import "modules/common/proto/header.proto";
+import "modules/common/proto/geometry.proto";
+import "modules/map/proto/map_id.proto";
+
+//ValidMapSlot is the compared result by TTE output matching with map slot.
+message ValidMapSlot {
+    optional jmc_auto.hdmap.Id id_v = 1;
+    optional jmc_auto.common.Polygon polygon_v = 2;
+    enum slotype {
+        VSLOT = 0; //Vertical Slot
+        HSLOT = 1; //Horizontal Slot
+        OSLOT = 2; //Oblique Slot
+        VPA = 3; //Valid Parking Area
+    };
+    optional slotype slottype = 3;
+}
+
+//Mulvalidslot is all valid parking slot summary. The maximum is the 20 pcs. 
+message MulvalidSlot {
+    repeated ValidMapSlot SlotSum = 1;
+    optional jmc_auto.common.Header header = 2;
+}

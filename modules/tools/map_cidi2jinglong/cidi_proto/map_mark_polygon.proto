@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+package apollo.hdmap;
+
+import "modules/tools/map_cidi2jinglong/cidi_proto/map_geometry.proto";
+import "modules/tools/map_cidi2jinglong/cidi_proto/map_id.proto";
+
+message MarkPolygon {
+  enum Type {
+    // The bridge refers to the bridge under which vehicles will pass.
+    BRIDGE_ABOVE = 1;
+    // the area between the start line and the end line of the downhill
+    DOWNHILL = 2;
+    UPHILL = 3;
+    // 收费站
+    TOLL_STATION = 4;
+    // 公交车站
+    BUS_STATION = 5;
+    // 紧急停车带
+    EMERGENCY_PARKING_STRIP = 6;
+    // 开放泊车空间
+    FREE_AREA = 28;
+  };
+
+  optional Id id = 1;  
+
+  optional Polygon polygon = 2;
+
+  repeated Id overlap_id = 3;
+
+  optional Type type = 4;
+}

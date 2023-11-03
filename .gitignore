@@ -1,0 +1,115 @@
+# Bazel
+bazel-*
+/Debug/
+*.pyc
+*genrule.log
+WORKSPACE
+release
+
+# temporary files
+*.swp
+*.swo
+.DS_Store
+*~
+
+# Eclipse IDE files
+.project
+.cproject
+.settings
+.classpath
+
+# IntelliJ files
+.idea
+
+# Vscode files
+.vscode
+
+# atom.io files
+*.gch
+
+# Logs.
+*.stdout
+*.stderr
+nohup.out
+*.csv.result
+
+# Editor configs
+#.ycm_extra_conf.py
+
+# ROS
+ros_param_server.pid
+.master_snapshot
+
+# third_party
+docker/build/drivers
+docker/build/yolo_camera_detector
+third_party/ros
+third_party/ros_aarch64/
+third_party/ros_x86_64/
+modules/ros/third_party/fast-rtps
+modules/dreamview/fronted/node_modules
+modules/map/AVP*
+modules/perception/model/yolo_camera_detector/lane2d_0627
+modules/perception/model/yolo_camera_detector/yolo3d_1128
+modules/perception/model/yolo_camera_detector/lane13d_0716
+*.run
+
+
+# Data
+data/prediction
+data/log
+data/core
+data/bag
+data/cov
+data/kv_db
+data/pcd
+data/nfs
+data/map_visual
+data/gpsbin
+data/csv
+*.tar.gz
+*.tar
+modules/data/conf/task_info_template.pb.txt
+modules/tools/ota/update.ini
+modules/tools/ota/vehicle_info.pb.txt
+modules/dreamview/frontend/dist/assets/map_data~*
+*.bag
+*.csv
+
+# Doxygen
+docs/doxygen
+
+# Map data files
+modules/map/data/*
+modules/dreamview/frontend/dist/assets/map_data
+
+# python proto
+py_proto
+
+# Data bag
+docs/demo_guide/*.bag
+modules/perception/data/*test
+
+# Cmake file
+modules/perception/cuda_util/cmake_build
+
+# User file
+.DREAMVIEW.txt
+.USER_NAME
+
+#calibration file
+modules/common/data/vehicle_config.pb.txt
+modules/control/conf/vehicle.pb.txt
+modules/canbus/conf/canbus_conf.pb.txt
+modules/localization/msf/params/velodyne_params
+modules/perception/data/params
+modules/drivers/gnss/conf/gnss_conf.pb.txt
+modules/localization/msf/params/gnss_params/ant_imu_leverarm.yaml
+modules/localization/msf/params/vehicle_params
+modules/tools/ota/vehicle_info.pb.txt
+
+#perception model
+modules/perception/obstacle/camera/detector/yolo_camera_detector/jmc_model
+
+#global_file
+modules/common/data/global_flagfile.txt

@@ -1,0 +1,68 @@
+#!/bin/bash
+
+source /jmcauto/scripts/jmc_auto_base.sh
+
+function start() {
+
+    # checkout core file limit
+    ulimit -c unlimited || {
+        echo "ERR: set core file size fail!"
+        exit 1
+    }
+    #必须的延时,以防开机自动启动时设备还未挂载
+    #非开机自动启动时可去掉延时
+    sleep 5
+    setup_device
+
+    # start hmi server
+    #bash ${JMC_AUTO_ROOT_DIR}/scripts/bootstrap.sh
+
+    # start modules
+    #非开机自动启动时可去掉延时
+    sleep 15
+    #根据需要添加注释脚本
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/gnss.sh
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/localization.sh
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/canbus.sh
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/conti_radar.sh
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/broadcast_extrinsics.sh >/dev/null 2>&1
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/pandora.sh
+    #bash ${JMC_AUTO_ROOT_DIR}/scripts/usb_cam.sh
+}
+
+function stop() {
+    set +e
+
+    #bash ${JMC_AUTO_ROOT_DIR}/scripts/bootstrap.sh stop
+
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/gnss.sh stop
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/localization.sh stop
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/canbus.sh stop
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/conti_radar.sh stop
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/pandora.sh stop
+    bash ${JMC_AUTO_ROOT_DIR}/scripts/usb_cam.sh stop
+
+    pkill -9 static_transfor
+    pkill -9 node
+    pkill -9 pad_command
+    pkill -9 mainboard
+    set -e
+}
+
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: all_set_up {start|stop|restart}"
+        exit 1
+        ;;
+esac

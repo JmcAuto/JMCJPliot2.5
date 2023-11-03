@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package jmc_auto.localization;
+
+import "modules/common/proto/header.proto";
+import "modules/common/proto/geometry.proto";
+
+message IntegSinsPva {
+  optional jmc_auto.common.Header header = 1;
+
+  // The position calculated by SINS.
+
+  optional jmc_auto.common.PointLLH position = 2;
+
+  // The velocity calculated by SINS.
+  optional jmc_auto.common.Point3D velocity = 3;
+
+  // The attitude euler calculated by SINS.
+  optional jmc_auto.common.Point3D attitude = 4;   //通过sins计算的姿态欧拉角
+
+  // 9-by-9 covariance matrix of the sins pva.
+  repeated double pva_covar = 5 [packed = true];
+
+  optional bool init_and_alignment = 6;
+}

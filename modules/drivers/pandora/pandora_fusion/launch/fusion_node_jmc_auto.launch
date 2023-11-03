@@ -1,0 +1,21 @@
+<launch>
+  <arg name="topic_left_pointcloud" default="/jmc_auto/sensor/hesai40/left/PointCloud2"/>
+  <arg name="topic_right_pointcloud" default="/jmc_auto/sensor/hesai40/right/PointCloud2"/>
+  <arg name="topic_back_pointcloud" default="/jmc_auto/sensor/hesai40/back/PointCloud2"/>
+  <arg name="topic_fused_pointcloud" default="/jmc_auto/sensor/velodyne64/PointCloud2"/>
+  <arg name="left_lidar_frame_id" default="hesai40_left"/>
+  <arg name="right_lidar_frame_id" default="hesai40_right"/>
+  <arg name="back_lidar_frame_id" default="hesai40_back"/>
+  <arg name="tf_query_timeout" default="0.1"/>
+
+  <node pkg="pandora_fusion" name="pandora_fusion" type="fusion_node" output="screen" >
+    <param name="topic_left_pointcloud" value="$(arg topic_left_pointcloud)"/>
+    <param name="topic_right_pointcloud" value="$(arg topic_right_pointcloud)"/>
+    <param name="topic_back_pointcloud" value="$(arg topic_back_pointcloud)"/>
+    <param name="topic_fused_pointcloud" value="$(arg topic_fused_pointcloud)"/>
+    <param name="left_lidar_frame_id" value="$(arg left_lidar_frame_id)"/>
+    <param name="right_lidar_frame_id" value="$(arg right_lidar_frame_id)"/>
+    <param name="back_lidar_frame_id" value="$(arg back_lidar_frame_id)"/>
+    <param name="tf_query_timeout" value="$(arg tf_query_timeout)"/>
+  </node>
+</launch>

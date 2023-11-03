@@ -1,0 +1,180 @@
+modules {
+  name: "GPS"
+  process_conf {
+    process_cmd_keywords: "modules/drivers/gnss/gnss"
+  }
+}
+modules {
+  name: "camera"
+  process_conf {
+    process_cmd_keywords: "camera_nodelet_manager"
+  }
+}
+modules {
+  name: "round_cam"
+  process_conf {
+    process_cmd_keywords: "rtsp_cam_node"
+  }
+}
+modules {
+  name: "canbus"
+  process_conf {
+    process_cmd_keywords: "modules/canbus/canbus"
+  }
+}
+modules {
+  name: "control"
+  process_conf {
+    process_cmd_keywords: "modules/control/control"
+  }
+  topic_conf {
+    type: CONTROL_COMMAND
+  }
+}
+modules {
+  name: "guardian"
+  process_conf {
+    process_cmd_keywords: "modules/guardian/guardian"
+  }
+}
+modules {
+  name: "localization"
+  process_conf {
+    process_cmd_keywords: "modules/localization/localization"
+  }
+  topic_conf {
+    type: LOCALIZATION
+  }
+}
+modules {
+  name: "perception"
+  process_conf {
+    process_cmd_keywords: "modules/perception/perception"
+  }
+  topic_conf {
+    type: PERCEPTION_OBSTACLES
+  }
+}
+modules {
+  name: "perception_lowcost"
+  process_conf {
+    process_cmd_keywords: "modules/perception/perception"
+  }
+  topic_conf {
+    type: PERCEPTION_OBSTACLES
+  }
+}
+modules {
+  name: "perception_slot"
+  process_conf {
+    process_cmd_keywords: "modules/perception/perception"
+  }
+  topic_conf {
+    type: PERCEPTION_OBSTACLES
+  }
+}
+modules {
+  name: "planning"
+  process_conf {
+    process_cmd_keywords: "modules/planning/planning"
+  }
+  topic_conf {
+    type: PLANNING_TRAJECTORY
+  }
+}
+modules {
+  name: "prediction"
+  process_conf {
+    process_cmd_keywords: "modules/prediction/prediction"
+  }
+  topic_conf {
+    type: PREDICTION
+  }
+}
+modules {
+  name: "mobileye"
+  process_conf {
+    process_cmd_keywords: "modules/drivers/mobileye/mobileye"
+  }
+}
+modules {
+  name: "radar"
+  process_conf {
+    process_cmd_keywords: "modules/drivers/radar/conti_radar/conti_radar"
+  }
+  topic_conf {
+    type: CONTI_RADAR
+  }
+}
+modules {
+  name: "tte_conti_radar"
+  process_conf {
+    process_cmd_keywords: "modules/drivers/radar/tte_conti_radar/tte_conti_radar"
+  }
+  topic_conf {
+    type: TTE_CONTI_RADAR
+  }
+}
+modules {
+  name: "record_bag"
+  process_conf {
+    process_cmd_keywords: "rosbag/record"
+  }
+}
+modules {
+  name: "routing"
+  process_conf {
+    process_cmd_keywords: "modules/routing/routing"
+  }
+}
+modules {
+  name: "third_party_perception"
+  process_conf {
+    process_cmd_keywords: "modules/third_party_perception/third_party_perception"
+  }
+  topic_conf {
+    type: PERCEPTION_OBSTACLES
+  }
+}
+modules {
+  name: "velodyne"
+  process_conf {
+    process_cmd_keywords: "sensor_velodyne64_driver"
+  }
+}
+modules {
+  name: "velodyne_16"
+  process_conf {
+    process_cmd_keywords: "sensor_velodyne16_driver"
+  }
+}
+hardware {
+  name: "velodyne"
+  topic_conf {
+    type: POINT_CLOUD
+  }
+}
+hardware {
+  name: "camera_long"
+  topic_conf {
+    type: IMAGE_LONG
+  }
+}
+hardware {
+  name: "camera_short"
+  topic_conf {
+    type: IMAGE_SHORT
+  }
+}
+hardware {
+  name: "camera_obstacle"
+  topic_conf {
+    type: IMAGE_FRONT
+  }
+}
+hardware {
+  name: "camera_round"
+  topic_conf {
+    type: IMAGE_ROUNDVIEW
+  }
+}

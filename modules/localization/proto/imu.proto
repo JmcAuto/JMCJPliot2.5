@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package jmc_auto.localization;
+
+import "modules/common/proto/header.proto";
+import "modules/localization/proto/pose.proto";
+
+message CorrectedImu {
+  optional jmc_auto.common.Header header = 1;
+
+  // Inertial Measurement Unit(IMU)
+  optional jmc_auto.localization.Pose imu = 3;
+}

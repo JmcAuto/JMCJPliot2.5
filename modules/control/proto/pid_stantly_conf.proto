@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package jmc_auto.control;
+
+import "modules/control/proto/pid_conf.proto";
+
+// simple optimal steer control param
+message PidStantlyConf {
+  optional double ts = 1; //-----------pid采样周期          
+  optional double lookahead = 2;//-----前进档预瞄距离
+  optional double lookback = 3 ;//-----后退预瞄距离
+  optional double kp = 4 ;//-----------前进stantly横向误差计算系数
+  optional double ksoft = 5;//---------松弛系数
+  optional PidConf lateral_pid_conf = 6 ;//---前进横向误差PID
+  optional PidConf reverse_pid_conf = 7;
+}

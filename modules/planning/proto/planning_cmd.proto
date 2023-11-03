@@ -1,0 +1,15 @@
+syntax = "proto2";
+package jmc_auto.planning;
+
+message SimpleTrajectoryDebug {
+  optional double x = 1;
+  optional double y = 2;
+  optional double phi = 3;
+  optional double d_phi = 4;
+  optional double v = 5;
+  optional double a = 6;
+  optional double steer = 7;
+  optional double accumulated_s = 8;
+  optional double d_s = 9;
+  optional double kappa = 10;
+}

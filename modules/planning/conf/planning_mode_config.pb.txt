@@ -1,0 +1,68 @@
+calldriving: {
+  enabled: false
+  routingrequest {
+    head:
+    waypoint{
+      id:
+      s:
+      pose{
+        x:
+        y:
+        z:
+      }
+    }
+    blacklisted_lane{
+      id:
+      start_s:
+      end_s:
+    }
+    blacklisted_road:
+  }
+}
+
+parking: {
+  enabled: true
+  ownparking {
+    enabled: true
+    routingrequest {
+      head:
+      waypoint{
+        id:
+        s:
+        pose{
+          x:
+          y:
+          z:
+        }
+      }
+      blacklisted_lane{
+        id:
+        start_s:
+        end_s:
+      }
+      blacklisted_road:
+    }
+  }
+
+  flowparking {
+    enabled: false
+    routingrequest {
+      head:
+      waypoint{
+        id:
+        s:
+        pose{
+          x:
+          y:
+          z:
+        }
+      }
+      blacklisted_lane{
+        id:
+        start_s:
+        end_s:
+      }
+      blacklisted_road:
+    }
+  }
+}

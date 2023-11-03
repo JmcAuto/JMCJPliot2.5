@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package jmc_auto.remote;
+
+message RemoteControlConf {
+  optional bytes address = 1;
+  optional uint32 port = 2;
+  optional uint32 timeout_usec = 3 ;
+}
