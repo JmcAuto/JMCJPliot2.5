@@ -47,3 +47,4 @@ end
 for k=1:11
     set_param([slxname,'/MsgToCAN/CAN FD Transmit',num2str(k)],'Device',['Vector ',de,' (Channel ',num2str(1+a),')']);
 end
+%%git测试
